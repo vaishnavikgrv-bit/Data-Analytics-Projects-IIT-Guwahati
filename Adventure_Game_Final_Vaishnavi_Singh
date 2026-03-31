@@ -1,0 +1,101 @@
+# This script implements a text-based adventure game.
+
+
+def start_game():
+   """ 
+    Define the function start_game() to display the game introduction 
+   Ask the player for their name and store it in a variable 
+   Provide the player with an initial choice (explore a forest or enter a cave) 
+   Call functions based on the player's choice
+   """
+   print("Welcome to the Text-Based Adventure Game!")
+   player_name = str(input("What is your name, adventurer? "))
+   print(f"Hello, {player_name}! You find yourself at a crossroads.")
+   print("Do you want to:")
+   print("1. Explore the forest")
+   print("2. Enter the cave")
+
+   choice = int(input("Enter 1 or 2 to make your choice: "))
+   if choice == 1:
+       forest_path(choice)
+   elif choice == 2:
+       cave_path(choice)
+   else:
+        print("Invalid choice. Please restart the game and choose either 1 or 2.")
+   return choice, player_name
+
+
+   
+    # Define the function forest_path() that describes the forest scenario and connects the player with the main function start_game()
+    # Provide the player with choices (follow a river or climb a tree) 
+    # Use an if-else structure to handle player choices
+    
+def forest_path(choice):
+
+    """
+    Define the function forest_path() that describes the forest scenario and connects with the player
+    Provide the player with choices (follow a river or climb a tree) 
+    Use an if-else structure to handle player choices
+    """
+    print("You venture into the forest and hear the sound of a river nearby.")
+    print("Do you want to:")
+    print("1. Follow the river")
+    print("2. Climb a tree to get a better view")
+    
+    choice = int(input("Enter 1 or 2 to make your choice: "))
+    
+    if choice == 1:
+        print("You follow the river and find a hidden treasure chest! You win!")
+    elif choice == 2:
+        print("You climb the tree but lose your footing and fall. Game over.")
+    else:
+        print("Invalid choice. Please restart the game and choose either 1 or 2.")
+    return choice
+
+
+# Define the function cave_path() that describes the cave scenario 
+# Provide the player with choices (light a torch or proceed in the dark) 
+#Use conditionals to determine the outcome
+
+def cave_path(choice):
+
+     """
+     Define the function cave_path() that describes the cave scenario 
+     Provide the player with choices (light a torch or proceed in the dark) 
+     Use conditionals to determine the outcome
+     """
+     print("You enter the dark cave and it's pitch black.")
+     print("Do you want to:")
+     print("1. Light a torch")
+     print("2. Proceed in the dark")
+        
+     choice = int(input("Enter 1 or 2 to make your choice: "))
+        
+     if choice == 1:
+         print("With the torch lit, you safely navigate the cave and find a pile of gold! You win!")
+     elif choice == 2:
+         print("Stumbling in the dark, you fall into a pit. Game over!")
+     else:
+         print("Invalid choice. Please restart the game and choose either 1 or 2.")
+     return choice
+
+# Main game loop to allow replaying the game
+
+start_game()
+while True:
+    replay = int(input("Do you want to play again? Enter 1 or 2 to make your choice: "))
+    if replay == 1:
+        start_game()
+    elif replay == 2:
+
+        print("Thank you for playing! Goodbye!")
+        break
+    else:
+        print("Invalid input. Please enter 1 or 2 to make your choice.")
+
+
+
+     
+
+
+    
